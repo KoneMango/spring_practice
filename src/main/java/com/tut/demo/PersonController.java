@@ -2,10 +2,13 @@ package com.tut.demo;
 
 import com.tut.demo.entity.person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 //@RestController
 //public class HelloWorldController {
@@ -36,4 +39,15 @@ public class PersonController {
     public List<person> getPeople() {
         return PersonRepository.findAll();
     }
+
+//    @GetMapping("/people/{id}")
+//    public ResponseEntity<person> getPersonById(@PathVariable String id) {
+//        Optional<person> personOptional = PersonRepository.findById(id);
+//        if (personOptional.isPresent()) {
+//            person person = personOptional.get();
+//            return ResponseEntity.ok(person);
+//        } else {
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
 }
